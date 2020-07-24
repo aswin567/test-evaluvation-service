@@ -43,7 +43,4 @@ bugReportRoutes(router);
 userRoutes(router);
 
 // intialise server
-app.listen(properties.PORT, (req, res) => {
-    console.log(req)
-    console.log(`Server is running on ${properties.PORT} port.`);
-})
+app.listen(process.env.PORT || 5000)
