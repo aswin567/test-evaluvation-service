@@ -7,6 +7,7 @@ const db = require('./config/database');
 //hero routes
 const userRoutes = require('./features/users/users.route');
 const bugReportRoutes = require('./features/bugs-report/bugs-report.route');
+const chatHistroyRoutes = require('./features/chat-history/chat-history.route');
 var app = express();
 //configure bodyparser
 var bodyParserJSON = bodyParser.json();
@@ -40,7 +41,9 @@ app.use('/api',router);
 
 //call heros routing
 bugReportRoutes(router);
+chatHistroyRoutes(router);
 userRoutes(router);
 
 // intialise server
+//app.listen(propertiesPORT)
 app.listen(process.env.PORT || 5000)
